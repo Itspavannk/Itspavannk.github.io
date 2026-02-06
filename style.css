@@ -903,11 +903,6 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
         display: inline;
     }
 
-    .blackhole-box video {
-        width: 100%;
-        margin-top: -15%;
-    }
-
     .autoBlur{
         animation: none;
     }
@@ -921,7 +916,7 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
         
     }
     .hero-info{
-        bottom: 10%;
+        bottom: 20%;
     }
 
 
@@ -1122,7 +1117,7 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     }
 
     .project-info{
-        margin-left: -170px;
+        margin-left: -140px;
     }
 
     .skills-box{
