@@ -54,7 +54,7 @@ header{
 header ul{
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 36%;
     padding: 15px 15px;
     border-radius: 50px;
     background-color: rgba(0, 0, 69, 0.326);
@@ -340,20 +340,20 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 .my-project{
     display: flex;
     flex-direction: column;
-    gap: 10%;
+    gap: 120px;
     align-items: center;
     position: relative;
     width: 80%;
-    height: 350vh;
     margin-top: 200px;
-    margin-bottom: 700px;
+    margin-bottom: 200px;
 
 }
+
+
 
 .project-card {
     display: flex;
     width: 100%;
-    height: 40%;
     align-items: center;
     gap: 10%;
     justify-content: center;
@@ -436,6 +436,138 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     width: 30%;
     height: 100px;
 }
+
+/* =========================
+   CERTIFICATE SECTION
+========================= */
+
+.certificate-section{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 200px;
+}
+
+/* GRID */
+.certificate-grid{
+    margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.certificate-card{
+    background-color: #080020b7;
+    border: 1px solid gray;
+    border-radius: 20px;
+    overflow: hidden;               
+    transition: 0.4s;
+}
+
+/* IMAGE PART */
+.certificate-image{
+    width: 70%;
+    height: 240px;  
+    margin-top: 40px;   
+    border-radius: 13px;  
+    overflow: hidden; 
+    background-color: #000;
+    margin-left: 14%;
+}
+
+.certificate-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;              
+    display: block;
+
+
+}
+
+/* CONTENT PART */
+.certificate-content{
+    padding: 20px;
+    text-align: center;
+   
+}
+
+.certificate-content h3{
+    margin: 10px 0 5px;
+    font-size: 20px;
+    color: lightgray;
+}
+
+.certificate-content p{
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 15px;
+}
+
+.certificate-content a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 1px solid #72a1de81;
+    background-color: #2200493d;
+    transition: 0.3s;
+}
+
+.certificate-content a:hover{
+    box-shadow: 0 0 15px #72a1de81;
+    opacity: 0.9;
+}
+
+/* HOVER EFFECT */
+.certificate-card:hover{
+    box-shadow: 0 0 20px #72a1de;
+    transform: translateY(-8px);
+}
+
+/* Hide extra certificates */
+.extra-cert{
+    display: none;
+}
+
+/* Button */
+.more-btn{
+    margin-top: 30px;
+    padding: 14px 35px;
+    border-radius: 12px;
+    border: 1px solid #72a1de81;
+    background-color: #2200493d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.more-btn:hover{
+    box-shadow: 0 0 15px #72a1de81;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media screen and (max-width: 600px){
+    .certificate-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-image{
+        height: 200px;
+    }
+}
+
+
+
+
 
 /* Skills section */
 .skills-section{
@@ -722,7 +854,7 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
         opacity: 0;
         transform: translateX(-500px) scale(0.2);
         filter: blur(10px);
-    } 35%,65%{
+    } 35%,55%{
         opacity: 1;
         transform: translateX(0) scale(1);
         filter: blur(0px);
@@ -829,10 +961,6 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 }
 
 
-
-
-
-
 @media (max-aspect-ratio: 16/9){
     .back-vid{
         width: auto;
@@ -850,14 +978,17 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 
 @media screen and (max-width: 1200px){
 
-header{
-    gap: 10px;
-}    
-header ul{
-  width: 330px;  
-  gap: 2px;
-  padding: 10px;
-}
+        header{
+            gap: 10px;
+        } 
+
+        header ul{
+        width: 520px;  
+        padding: 10px;
+        font-size: 14px;
+        }
+
+
     .hero-info h1{
         font-size: 40px;
         max-width: 400px;
@@ -936,7 +1067,7 @@ header ul{
     }
 
     .my-project{
-        margin-bottom: 300px;
+        margin-bottom: 100px;
         scale: 0.8;
     }
 
@@ -957,6 +1088,12 @@ header ul{
 
 /* NEW TABLET BREAKPOINT */
 @media screen and (max-width: 1024px){
+
+header ul{
+    font-size: 10px;
+
+}
+
     .project-vidbox{
         min-width: 300px;
     }
@@ -996,6 +1133,7 @@ header ul{
     .autoBlur{
         animation: none;
     }
+
     
     .hero{
         flex-direction: column;
@@ -1048,11 +1186,11 @@ header ul{
         .card p{
         font-size: 10px;
         font-weight: 700;
-margin-bottom: 0;
+        margin-bottom: 0;
     }
 
     #card2p{
-margin-bottom: 40px;    
+        margin-bottom: 40px;    
     }
 
     #glob-vdo{
@@ -1076,12 +1214,6 @@ margin-bottom: 40px;
         width: 100%;
     }
 
-    .project-info h1{
-        font-size: 25px;
-        max-width: 350px;
-        text-wrap: wrap;
-    }
-
     .project-info p{
         font-size: 16px;
         text-wrap: wrap;
@@ -1093,9 +1225,6 @@ margin-bottom: 40px;
         padding: 5px 10px;
     }
 
-    .my-project{
-        margin-bottom: 600px;
-    }
 
     .project-card{
         flex-direction: column;
@@ -1111,9 +1240,6 @@ margin-bottom: 40px;
         width: 100%;
     }
 
-    .project-info h1{
-        text-wrap: nowrap;
-    }
 
     .project-info p{
         max-width: 300px;
@@ -1165,6 +1291,10 @@ margin-bottom: 40px;
         margin-bottom: 30px;
     }
 
+    #contact-form{
+        margin-left: -50px;
+
+    }
     .footer{
         font-size: 10px;
     }
@@ -1275,12 +1405,6 @@ margin-bottom: 40px;
         
     }
 
-    .project-info h1{
-        font-size: 20px;
-        max-width: 350px;
-        text-wrap: wrap;
-    }
-
     .project-info p{
         font-size: 16px;
         text-wrap: wrap;
@@ -1290,10 +1414,6 @@ margin-bottom: 40px;
 
     .project-info button{
         padding: 5px 10px;
-    }
-
-    .my-project{
-        margin-bottom: 600px;
     }
 
     .project-card{

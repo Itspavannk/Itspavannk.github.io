@@ -35,6 +35,23 @@ closeIcon.addEventListener("click", function(){
     sideBar.classList.add("close-sidebar");
     
 })
+
+const btn = document.getElementById("toggleCertBtn");
+const extraCerts = document.querySelectorAll(".extra-cert");
+
+let expanded = false;
+
+btn.addEventListener("click", () => {
+  expanded = !expanded;
+
+  extraCerts.forEach(cert => {
+    cert.style.display = expanded ? "block" : "none";
+  });
+
+  btn.textContent = expanded 
+    ? "Show Less Certificates" 
+    : "View More Certificates";
+});
 // Scroll to Top Button //
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
