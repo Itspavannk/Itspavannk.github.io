@@ -344,9 +344,10 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     align-items: center;
     position: relative;
     width: 80%;
-    height: 230vh;
+    height: 350vh;
     margin-top: 200px;
     margin-bottom: 700px;
+
 }
 
 .project-card {
@@ -882,9 +883,41 @@ header ul{
         grid-template-columns: auto;
     }
 
+    #card1{
+        height: 110px;
+        width: 110px;
+        margin-top: 10px;
+    }
+
+    #glob-vdo{
+        height: 50%;
+        width: 40%;
+    }
+
+    #card3 p{
+        bottom: 70px;
+    }
+
+    .skills-section{
+        height: 160vh;
+
+    }
+
+    .skills-box{
+        height: 120vh;
+    }
+
+
+
     .card:nth-child(3){
         grid-column: span 2;
         height: 70vh;
+    }
+
+    .card p{
+        margin-bottom: 0px;
+        font-size: 14px;
+        font-weight: 700;
     }
 
     .info-cards .card h1{
@@ -908,7 +941,11 @@ header ul{
 
     .contact-section .section-title {
         left: 30%;
+       
     }
+}
+.contact-section{
+  height: 150vh;
 }
 
 .footer h1{
@@ -975,28 +1012,58 @@ header ul{
         height: 100%;
     }
 
+        #card1{
+            height: 50%;
+            width: 50%;
+            margin-top: 10px;
+        }
+
+        .card h1{
+        bottom: 90px;
+        }
+
+
+        .card p{
+        font-size: 10px;
+        font-weight: 700;
+margin-bottom: 0;
+    }
+
+    #card2p{
+margin-bottom: 40px;    
+    }
+
+    #glob-vdo{
+        width: 50%;
+        height: 60%;
+    }
+
+    #card3 p{
+        bottom: 70px;
+    }
+
     .project-vidbox video{
-        width: 350px;
+        width: 450px;
         margin-left: -100px;
     }
 
     .project-info{
         overflow: hidden;
         padding-left: 0;
-        margin-left: -50px;
+        margin-left: 0px;
         width: 100%;
     }
 
     .project-info h1{
-        font-size: 20px;
+        font-size: 25px;
         max-width: 350px;
         text-wrap: wrap;
     }
 
     .project-info p{
-        font-size: 10px;
+        font-size: 16px;
         text-wrap: wrap;
-        max-width: 200px;
+        max-width: 300px;
         min-width: 0;
     }
 
@@ -1030,9 +1097,19 @@ header ul{
         max-width: 300px;
     }
 
+
+
     .Designer{
-        top: 15%;
-        left: 18%;
+        top: 21%;
+        left: 32%;
+    }
+
+    .skills-box{
+        height: 150vh;
+    }
+
+    .skills-section{
+        height: 150vh;
     }
 
     .Designer h1{
@@ -1041,12 +1118,12 @@ header ul{
     }
 
     .coder{
-        top: 50%;
-        left: 18%;
+        top: 55%;
+        left: 32%;
     }
 
-    .coder h1{
-        margin-bottom: 0;
+    .coder p{
+        margin-top: -20px;
     }
 
     .slider .list .item img{
@@ -1057,6 +1134,7 @@ header ul{
         flex-direction: column;
         margin-top: 100px;
         margin-bottom: 50px;
+        height: 180vh;
     }
 
     .footer{
@@ -1114,46 +1192,122 @@ header ul{
 
 
 
-    .card {
-        min-height: 25rem;
-    }
+        .card {
+            min-height: 25rem;
+        }
 
-    #card1{
-        height: 150px;
-        width: 150px;
-        margin-top: 50px;
-    }
+        #card1{
+            height: 150px;
+            width: 150px;
+            margin-top: 20px;
+        }
+
+                #card2{
+            height: 200px;
+            width: 200px;
+            margin-top: 20px;
+        }
+
+        #card3 h1{
+            margin-bottom: 30px;
+        }
+        #card3 p{
+    margin-bottom: 10px;
+        }
 
 
+        .card h1{
+            bottom: 40%;
+            font-size: 1rem;
+        }
 
-    .card h1{
-        bottom: 30%;
-        font-size: 5px;
-    }
+        #glob-vdo{
+        height: 45%;
+        width: 60%;
+        }
 
 
-    .my-project{
-        margin-left: 30px;
-
-    }
-
-    .project-card {
-        height: 60%;
-    }
-
-    .project-info p{
-        margin-bottom: 15px;
-        font-size: 16px;
+    .project-vidbox video{
+        width: 300px;
+        margin-right: -30px;
     }
 
     .project-info{
-        margin-left: -140px;
+        overflow: hidden;
+        padding-left: 0;
+        margin-left: -70px;
+        width: 100%;
+        
+    }
+
+    .project-info h1{
+        font-size: 20px;
+        max-width: 350px;
+        text-wrap: wrap;
+    }
+
+    .project-info p{
+        font-size: 16px;
+        text-wrap: wrap;
+        max-width: 300px;
+        min-width: 0;
+    }
+
+    .project-info button{
+        padding: 5px 10px;
+    }
+
+    .my-project{
+        margin-bottom: 600px;
+    }
+
+    .project-card{
+        flex-direction: column;
+        margin-left: 25%;
+        gap: 30px;
+    }
+    
+    .project-vidbox{
+        min-width: 200px;
+    }
+
+
+    .Designer{
+        top: 10%;
+        left: 8%;
     }
 
     .skills-box{
-        height: 140vh;
-        margin-right: 30px;
+        height: 150vh;
     }
+
+    .skills-section{
+        height: 150vh;
+    }
+
+    .Designer h1{
+        margin-bottom: 0;
+        margin-top: 70px;
+    }
+
+    .coder{
+        top: 40%;
+        left: 8%;
+    }
+
+    .coder p{
+        margin-top: -20px;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     .slider{
