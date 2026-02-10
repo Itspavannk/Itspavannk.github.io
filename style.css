@@ -577,7 +577,8 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 .contact-section h1{
     position: absolute;
     top: 10%;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .social-box {
@@ -657,14 +658,14 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 .footer{
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    align-items: center;
+    position: relative;
+    width: 100%;
     height: 70px;
     background-color: rgba(255, 255, 255, 0.121);
     z-index: 999;
     padding: 0 3rem;
+    box-sizing: border-box;
 }
 
 
@@ -940,17 +941,38 @@ header ul{
     }
 
     .contact-section .section-title {
-        left: 30%;
-       
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contact-section{
+        height: 150vh;
+    }
+
+    .footer h1{
+        font-size: 20px;
+        padding-top: 10px;
     }
 }
-.contact-section{
-  height: 150vh;
-}
 
-.footer h1{
-    font-size: 20px;
-    padding-top: 10px;
+/* NEW TABLET BREAKPOINT */
+@media screen and (max-width: 1024px){
+    .project-vidbox{
+        min-width: 300px;
+    }
+
+    .project-info h1{
+        font-size: 22px;
+    }
+
+    .contact-box{
+        max-width: 450px;
+    }
+
+    .contact-box input,
+    .contact-box textarea{
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 700px){
@@ -1137,12 +1159,25 @@ margin-bottom: 40px;
         height: 180vh;
     }
 
+    .contact-section .section-title{
+        position: static;
+        transform: none;
+        margin-bottom: 30px;
+    }
+
     .footer{
         font-size: 10px;
     }
 
     .social-box{
-        margin-left: -90px;
+        margin-left: 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .contact-box{
+        width: 90%;
+        max-width: 500px;
     }
 }
 
@@ -1299,34 +1334,24 @@ margin-bottom: 40px;
         margin-top: -20px;
     }
 
-
-
-
-
-
-
-
-
-
-
-
     .slider{
         bottom: 2%;
     }
 
     .contact-section{
         scale: 0.9;
-        height: 120vh;
+        height: 140vh;
     }
     
     .social-box{
-        margin-left: 10px;
-
+        margin-left: 0;
+        width: 100%;
     }
 
     .contact-section .section-title {
-        top: -30px;
-        left: 25%;
+        position: static;
+        transform: none;
+        margin-bottom: 20px;
     }
 
     .footer{
@@ -1342,18 +1367,74 @@ margin-bottom: 40px;
         gap: 10px;
     }
 
+    .contact-box{
+        width: 95%;
+        padding: 20px;
+    }
 
+    .contact-box input,
+    .contact-box textarea{
+        width: 100%;
+    }
 }
 
 .contact-box button:disabled{
     opacity: 0.6;
     cursor: not-allowed;
 }
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 69, 0.326);
+    backdrop-filter: blur(10px);
+    border: 2px solid #72a1de;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #72a1de;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    z-index: 999;
+    box-shadow: 0 0 10px #72a1de63;
+}
 
+.scroll-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
 
+.scroll-to-top:hover {
+    background-color: #72a1de;
+    color: black;
+    box-shadow: 0 0 20px #72a1de;
+    transform: translateY(-5px);
+}
 
+/* Responsive styles for scroll-to-top */
+@media screen and (max-width: 700px) {
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 80px;
+        right: 20px;
+        font-size: 20px;
+    }
+}
 
-
-
-
-
+@media screen and (max-width: 480px) {
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 70px;
+        right: 15px;
+        font-size: 18px;
+    }
+}

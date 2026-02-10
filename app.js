@@ -35,3 +35,22 @@ closeIcon.addEventListener("click", function(){
     sideBar.classList.add("close-sidebar");
     
 })
+// Scroll to Top Button //
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+// Show button when scrolling down
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('active');
+    } else {
+        scrollToTopBtn.classList.remove('active');
+    }
+});
+
+// Scroll to top when clicked
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
