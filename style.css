@@ -344,7 +344,7 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     align-items: center;
     position: relative;
     width: 80%;
-    height: 180vh;
+    height: 230vh;
     margin-top: 200px;
     margin-bottom: 700px;
 }
@@ -442,6 +442,7 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     flex-direction: column;
     align-items: center;
     position: relative;
+    height: 130vh;
 }
 
 .skills-box{
@@ -608,16 +609,18 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     margin-bottom: 5px;
 } 
 
-.contact-box input{
-    padding: 7.5px 30px;
+.contact-box input,
+.contact-box textarea{
+    padding: 13px 30px;
     background-color: lightgray;
     width: 80%;
-    height: 25px;
     border: none;
-    outline : none;
+    outline: none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    font-size: 14px;
 }
+
 
 .contact-box button{
     margin-top: 30px;
@@ -635,6 +638,20 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     opacity: 0.8;
     box-shadow: 0 0 15px #72a1de81;
 }
+
+.contact-box label{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: lightgray;
+    font-size: 15px;
+}
+
+.contact-box textarea{
+    height: 90px;
+    resize: none;
+}
+
 
 .footer{
     display: flex;
@@ -830,10 +847,15 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 
 
 @media screen and (max-width: 1200px){
-    .blackhole-box video{
-        margin-top: -20%;
-    }
 
+header{
+    gap: 10px;
+}    
+header ul{
+  width: 330px;  
+  gap: 2px;
+  padding: 10px;
+}
     .hero-info h1{
         font-size: 40px;
         max-width: 400px;
@@ -842,6 +864,10 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 
     .hero-info P{
         max-width: 300px;
+    }
+
+    .box-icons{
+        gap: 10px;
     }
 
     .skills-video-box{
@@ -876,13 +902,18 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     }
 
     .my-project{
-        margin-bottom: 200px;
+        margin-bottom: 300px;
         scale: 0.8;
     }
 
     .contact-section .section-title {
         left: 30%;
     }
+}
+
+.footer h1{
+    font-size: 20px;
+    padding-top: 10px;
 }
 
 @media screen and (max-width: 700px){
@@ -1102,7 +1133,6 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 
 
     .my-project{
-        height: 180vh;
         margin-left: 30px;
 
     }
@@ -1159,6 +1189,11 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     }
 
 
+}
+
+.contact-box button:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 

@@ -224,21 +224,47 @@
 
 
             </div>
+<form id="contact-form" class="contact-box autoBlur">
+  
+  <p>
+    Whether you're looking to build a new website, improve your existing platform,
+    or bring a unique project to life, I'm here to help.
+  </p>
 
-            <div class="contact-box autoBlur">
-                <p>Wheter you're looking to build a new website, improve your existing platform, or bring a unique project to file. i'm here to help.</p>
-            
-                <p>Full Name</p>
-                <input placeholder="Your Full name" type="full name">
+  <label for="from_name">Full Name</label>
+  <input
+    id="from_name"
+    name="from_name"
+    type="text"
+    placeholder="Your full name"
+    required
+  >
 
-                <p>Email Address</p>
-                <input placeholder="Your Email" type="Contact">
+  <label for="from_email">Email Address</label>
+  <input
+    id="from_email"
+    name="from_email"
+    type="email"
+    placeholder="Your email"
+    required
+  >
 
-                <p>Your Message</p>
-                <input  class="input-message" type="contact" placeholder="shaire your thoughts...">
+  <label for="message">Your Message</label>
+  <textarea
+    id="message"
+    name="message"
+    class="input-message"
+    placeholder="Share your thoughts..."
+    required
+  ></textarea>
 
-                <button>Send Message <i class='bx bx-mail-send'></i></button>
-            </div>
+  <button type="submit" id="sendBtn">
+     <span id="btnText">Send Message</span>
+  <i class='bx bx-mail-send'></i>
+  </button>
+
+</form>
+
         
         </section> 
 
@@ -259,12 +285,49 @@
       AOS.init();
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 <script>
-  (function(){
-    emailjs.init("YOUR_PUBLIC_KEY");
+  (function () {
+    emailjs.init("PEF4jxPv-oxHdTtJa");
   })();
+
+  const form = document.getElementById("contact-form");
+  const btn = document.getElementById("sendBtn");
+  const btnText = document.getElementById("btnText");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    btn.disabled = true;
+    btnText.textContent = "Sending...";
+
+    emailjs.sendForm(
+      "service_3l3e148",
+      "template_svsbdji",
+      this
+    ).then(
+      function () {
+        btnText.textContent = "Message Sent ✅";
+        form.reset();
+
+        setTimeout(() => {
+          btnText.textContent = "Send Message";
+          btn.disabled = false;
+        }, 3000);
+      },
+      function (error) {
+        btnText.textContent = "Failed ❌";
+        btn.disabled = false;
+        console.log(error);
+      }
+    );
+  });
 </script>
+
+
 
 </body>
 </html>
