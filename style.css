@@ -1158,13 +1158,15 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     .info-cards {
         grid-template-columns: repeat(2, 1fr);
     }
+    /* FIX: card3 full width so no half-card + empty space */
     .card:nth-child(3) {
-        grid-column: span 1;
+        grid-column: span 2;
         grid-row: span 1;
-        height: 52vh;
+        height: 70vh;
     }
-    .card:nth-child(3) h1 { bottom: 26%; }
-    .card:nth-child(3) p  { bottom: 5%;  }
+    .card:nth-child(3) h1 { bottom: 22%; }
+    .card:nth-child(3) p  { bottom: 13%; }
+    #card3 button { bottom: 3%; }
     .card:nth-child(4) {
         grid-column: span 2;
         height: 38vh;
@@ -1192,10 +1194,12 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
         min-width: 0;
     }
 
-    /* Globe video */
+    /* FIX: globe video fills card without weird shape */
     #glob-vdo {
-        width: 65%;
-        height: 65%;
+        width: 100%;
+        height: 80%;
+        margin-top: 0;
+        object-fit: cover;
     }
 
     /* Contact: stack */
