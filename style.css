@@ -1227,6 +1227,38 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     .certificate-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
+
+    /* KEY FIX: scroll-driven animations break in Chrome desktop mode.
+       animation-timeline: view() miscalculates scroll positions at the
+       forced ~980px viewport — elements get stuck at blur:40px / scale:0,
+       causing giant empty gaps and missing cards (the exact bug in screenshots).
+       Disabling them here makes everything always visible in this range. */
+    .autoBlur {
+        animation: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+    }
+
+    .autoDisplay {
+        animation: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .fadein-left {
+        animation: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .contact-section .section-title {
+        animation: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
 
