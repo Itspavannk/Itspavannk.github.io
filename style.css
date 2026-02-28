@@ -554,7 +554,7 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 
 
 /* =========================
-   MOBILE RESPONSIVE
+   MOBILE RESPONSIVE (certificates)
 ========================= */
 @media screen and (max-width: 600px){
     .certificate-grid{
@@ -565,9 +565,6 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
         height: 200px;
     }
 }
-
-
-
 
 
 /* Skills section */
@@ -1137,140 +1134,101 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     }
 }
 
-/* TABLET / MOBILE DESKTOP MODE (fires at ~980px in desktop mode) */
-@media screen and (max-width: 1024px){
+/* =====================================================
+   CHROME MOBILE DESKTOP MODE FIX
+   Targets ~701px–1024px (the forced ~980px viewport).
+   Your original CSS above is 100% untouched.
+   Only the broken things at this range are patched here.
+===================================================== */
+@media screen and (min-width: 701px) and (max-width: 1024px) {
 
-    header ul{
-        font-size: 10px;
+    /* Header nav: shrink so links don't overflow */
+    header ul {
+        width: auto;
+        min-width: 0;
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+    header ul a {
+        margin: 0 4px;
+        font-size: 11px;
     }
 
-    /* --- About Me cards: switch to 2-column grid --- */
+    /* About Me bento: 2-col, fix row/col spans */
     .info-cards {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .card:nth-child(3) {
         grid-column: span 1;
         grid-row: span 1;
         height: 52vh;
     }
-
     .card:nth-child(3) h1 { bottom: 26%; }
     .card:nth-child(3) p  { bottom: 5%;  }
-
     .card:nth-child(4) {
         grid-column: span 2;
         height: 38vh;
     }
-
     .card:nth-child(4) h1 { bottom: 30%; }
 
-    /* --- Projects: stack vertically --- */
+    /* Projects: stack so vidbox doesn't blowout */
     .project-card {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
-
     .project-vidbox {
-        min-width: unset;
+        min-width: 0;
         width: 80%;
     }
-
-    .project-vidbox video {
-        width: 100%;
-    }
-
     .project-info {
         width: 80%;
         padding-left: 0;
-        align-items: center;
-        text-align: left;
     }
-
     .project-info h1 {
-        font-size: 22px;
+        text-wrap: wrap;
+    }
+    .project-info p {
+        min-width: 0;
     }
 
-    /* --- Globe video fix --- */
-    #glob-vdo{
-        margin-top: -20px;
-        height: 100%;
-        width: 70%;
+    /* Globe video */
+    #glob-vdo {
+        width: 65%;
+        height: 65%;
     }
 
-    /* --- Contact section: stack vertically, no giant gap --- */
+    /* Contact: stack */
     .contact-section {
         flex-direction: column;
         align-items: center;
         gap: 30px;
-        padding-top: 40px;
-        padding-bottom: 50px;
     }
-
     .social-box {
         max-width: 100%;
-        width: 100%;
         min-width: unset;
-        padding-top: 0;
+        width: 100%;
     }
-
     .contact-box {
         max-width: 520px;
-        width: 100%;
         min-width: unset;
+        width: 100%;
     }
-
     .contact-box input,
     .contact-box textarea {
         width: 90%;
     }
-
     #contact-form {
         margin-left: 0;
         width: 100%;
-        max-width: 520px;
-        box-sizing: border-box;
     }
 
-    /* --- Skills --- */
-    .skills-section {
-        height: 150vh;
-    }
-
-    .skills-box {
-        height: 110vh;
-    }
-
-    .skills-image {
-        width: 50%;
-    }
-
-    .Designer {
-        top: 20%;
-        left: 2%;
-        max-width: 220px;
-    }
-
-    .Designer h1 {
-        font-size: 36px;
-    }
-
-    .coder {
-        top: 20%;
-        right: 2%;
-        max-width: 220px;
-    }
-
-    .coder h1 {
-        font-size: 36px;
-    }
-
-    .slider {
-        right: 15%;
-        width: 70%;
+    /* Certificates: smaller min so cards don't overflow */
+    .certificate-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 }
+
 
 @media screen and (max-width: 700px){
     header {
