@@ -16,7 +16,7 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: clamp(40px, 6vw, 100px);
     background-color: #001f7c38;
 }
 
@@ -699,7 +699,6 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 /* CONTACT SECTION */
 .contact-section{
     width: 80%;
-    min-height: 100vh;
     height: auto;
     display: flex;
     justify-content: center;
@@ -708,7 +707,7 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     position: relative;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 80px;
+    padding-top: 60px;
     padding-bottom: 60px;
 }
 
@@ -1132,115 +1131,138 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     }
 }
 
-/* NEW TABLET BREAKPOINT */
+/* TABLET / MOBILE DESKTOP MODE (fires at ~980px in desktop mode) */
 @media screen and (max-width: 1024px){
 
-header ul{
-    font-size: 10px;
-
-}
-#glob-vdo{
-    margin-top: -20px;
-    height: 100%;
-    width: 70%;
-}
-
-    .project-vidbox{
-        min-width: 300px;
+    header ul{
+        font-size: 10px;
     }
 
-    .project-info h1{
+    /* --- About Me cards: switch to 2-column grid --- */
+    .info-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card:nth-child(3) {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 52vh;
+    }
+
+    .card:nth-child(3) h1 { bottom: 26%; }
+    .card:nth-child(3) p  { bottom: 5%;  }
+
+    .card:nth-child(4) {
+        grid-column: span 2;
+        height: 38vh;
+    }
+
+    .card:nth-child(4) h1 { bottom: 30%; }
+
+    /* --- Projects: stack vertically --- */
+    .project-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .project-vidbox {
+        min-width: unset;
+        width: 80%;
+    }
+
+    .project-vidbox video {
+        width: 100%;
+    }
+
+    .project-info {
+        width: 80%;
+        padding-left: 0;
+        align-items: center;
+        text-align: left;
+    }
+
+    .project-info h1 {
         font-size: 22px;
     }
 
-    .contact-box{
-        max-width: 450px;
+    /* --- Globe video fix --- */
+    #glob-vdo{
+        margin-top: -20px;
+        height: 100%;
+        width: 70%;
+    }
+
+    /* --- Contact section: stack vertically, no giant gap --- */
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+
+    .social-box {
+        max-width: 100%;
+        width: 100%;
+        min-width: unset;
+        padding-top: 0;
+    }
+
+    .contact-box {
+        max-width: 520px;
+        width: 100%;
+        min-width: unset;
     }
 
     .contact-box input,
-    .contact-box textarea{
+    .contact-box textarea {
         width: 90%;
     }
 
-    .contact-section{
-        gap: 4%;
+    #contact-form {
+        margin-left: 0;
+        width: 100%;
+        max-width: 520px;
+        box-sizing: border-box;
     }
 
-    .social-box{
-        max-width: 280px;
+    /* --- Skills --- */
+    .skills-section {
+        height: 150vh;
     }
 
-    /* Fix About Me bento grid for tablet/mobile-desktop-mode */
-    .info-cards {
-        grid-template-columns: repeat(2, 1fr);
+    .skills-box {
+        height: 110vh;
     }
 
-    .card:nth-child(3) {
-        grid-column: span 1;
-        grid-row: span 1;
-        height: 50vh;
+    .skills-image {
+        width: 50%;
     }
 
-    .card:nth-child(3) h1 {
-        bottom: 28%;
+    .Designer {
+        top: 20%;
+        left: 2%;
+        max-width: 220px;
     }
 
-    .card:nth-child(3) p {
-        bottom: 5%;
+    .Designer h1 {
+        font-size: 36px;
     }
 
-    .card:nth-child(4) {
-        grid-column: span 2;
+    .coder {
+        top: 20%;
+        right: 2%;
+        max-width: 220px;
     }
 
-    .card:nth-child(4) h1 {
-        bottom: 35%;
-    }
-}
-
-/* Mobile desktop mode — phones rendering at ~900px viewport */
-@media screen and (max-width: 900px) and (min-width: 701px) {
-
-    .info-cards {
-        grid-template-columns: repeat(2, 1fr);
-        height: auto;
+    .coder h1 {
+        font-size: 36px;
     }
 
-    .card {
-        height: 45vh;
-    }
-
-    .card:nth-child(3) {
-        grid-column: span 1;
-        grid-row: span 1;
-        height: 55vh;
-    }
-
-    .card:nth-child(3) h1 {
-        bottom: 25%;
-    }
-
-    .card:nth-child(3) p {
-        bottom: 5%;
-    }
-
-    .card:nth-child(4) {
-        grid-column: span 2;
-        height: 40vh;
-    }
-
-    .card:nth-child(4) h1 {
-        bottom: 30%;
-    }
-
-    #card1 {
-        height: 45%;
-        width: 45%;
-    }
-
-    #card2 {
-        height: 55%;
-        width: 55%;
+    .slider {
+        right: 15%;
+        width: 70%;
     }
 }
 
@@ -1431,7 +1453,7 @@ header ul{
 
     #contact-form{
         margin-left: -50px;
-        width: 100%;
+        width: 90%;
         max-width: 500px;
         box-sizing: border-box;
     }
@@ -1591,7 +1613,7 @@ header ul{
     }
 
     .coder{
-        top: 40%;
+        top: 50%;
         left: 8%;
     }
 
