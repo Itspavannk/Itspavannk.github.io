@@ -1169,6 +1169,79 @@ header ul{
     .social-box{
         max-width: 280px;
     }
+
+    /* Fix About Me bento grid for tablet/mobile-desktop-mode */
+    .info-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card:nth-child(3) {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 50vh;
+    }
+
+    .card:nth-child(3) h1 {
+        bottom: 28%;
+    }
+
+    .card:nth-child(3) p {
+        bottom: 5%;
+    }
+
+    .card:nth-child(4) {
+        grid-column: span 2;
+    }
+
+    .card:nth-child(4) h1 {
+        bottom: 35%;
+    }
+}
+
+/* Mobile desktop mode — phones rendering at ~900px viewport */
+@media screen and (max-width: 900px) and (min-width: 701px) {
+
+    .info-cards {
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+    }
+
+    .card {
+        height: 45vh;
+    }
+
+    .card:nth-child(3) {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 55vh;
+    }
+
+    .card:nth-child(3) h1 {
+        bottom: 25%;
+    }
+
+    .card:nth-child(3) p {
+        bottom: 5%;
+    }
+
+    .card:nth-child(4) {
+        grid-column: span 2;
+        height: 40vh;
+    }
+
+    .card:nth-child(4) h1 {
+        bottom: 30%;
+    }
+
+    #card1 {
+        height: 45%;
+        width: 45%;
+    }
+
+    #card2 {
+        height: 55%;
+        width: 55%;
+    }
 }
 
 @media screen and (max-width: 700px){
