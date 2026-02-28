@@ -1056,7 +1056,7 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     }
 
     .info-cards{
-        grid-template-columns: auto;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #card1{
@@ -1071,24 +1071,32 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
     }
 
     #card3 p{
-        bottom: 70px;
+        bottom: 5%;
     }
 
     .skills-section{
         height: 160vh;
-
     }
 
     .skills-box{
         height: 120vh;
     }
 
-
-
     .card:nth-child(3){
-        grid-column: span 2;
-        height: 70vh;
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 52vh;
     }
+
+    .card:nth-child(3) h1 { bottom: 26%; }
+    .card:nth-child(3) p  { bottom: 5%;  }
+
+    .card:nth-child(4){
+        grid-column: span 2;
+        height: 38vh;
+    }
+
+    .card:nth-child(4) h1 { bottom: 30%; }
 
     .card p{
         margin-bottom: 0px;
@@ -1100,29 +1108,27 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
         font-size: 20px;
     }
 
-    .info-cards .card:nth-child(3) h1{
-        bottom: 25%;
-    }
-
     .card video{
         height: 60%;
-
         margin-top: 5%;
     }
 
     .my-project{
         margin-bottom: 100px;
-        scale: 0.8;
     }
 
     .contact-section .section-title {
-        left: 50%;
-        transform: translateX(-50%);
+        left: unset;
+        transform: none;
     }
 
     .contact-section{
         flex-direction: column;
-        height: 150vh;
+        align-items: center;
+        height: auto;
+        gap: 30px;
+        padding-top: 40px;
+        padding-bottom: 50px;
     }
 
     .footer h1{
@@ -1453,7 +1459,7 @@ background: linear-gradient(to right top, #ed00ff, #ff00ab, #ff515c, #ffa708, #f
 
     #contact-form{
         margin-left: -50px;
-        width: 90%;
+        width: 100%;
         max-width: 500px;
         box-sizing: border-box;
     }
